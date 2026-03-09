@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }}</title>
+
+<link rel="preload" as="font" href="/assets/fonts/inter.woff2" crossorigin>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+{% if page.layout == 'post' %}
+<link rel="stylesheet" href="/assets/css/syntax.css">
+{% endif %}
+
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg?v=1">
+
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-96x96.png?v=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-96x96.png?v=1">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon/favicon-96x96.png?v=1">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png?v=1">
+
+<link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+
+<meta name="theme-color" content="#ffffff">
+
+<link rel="alternate" type="application/atom+xml" title="Feed" href="{{ '/feed.xml' | absolute_url }}">

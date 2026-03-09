@@ -1,0 +1,19 @@
+title: Home
+url: https://thisisarunesh.github.io
+permalink: /blog/:title
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "posts"
+
+destination: public
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap

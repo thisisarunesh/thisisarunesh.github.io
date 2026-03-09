@@ -1,0 +1,103 @@
+@use "sass:color";
+
+$foreground: #121212;
+$background: #fff;
+$secondary: darken($background, 10%);
+$link: #0066cc;
+
+$foreground-dark: #ccc;
+$background-dark: #111;
+$secondary-dark: lighten($background-dark, 10%);
+$link-dark: #46a2ff;
+
+@mixin light-theme {
+    color: $foreground;
+    background-color: $background;
+
+    a,
+    a:link,
+    a:visited,
+    a:hover {
+        color: $link;
+    }
+
+    code {
+        background-color: $secondary;
+    }
+
+    pre, pre code {
+        background-color: $secondary-dark;
+    }
+
+    blockquote {
+        border-left: medium solid $secondary;
+    }
+
+    details {
+        background-color: $secondary;
+    }
+}
+
+@mixin dark-theme {
+    color: $foreground-dark;
+    background-color: $background-dark;
+
+    a,
+    a:link,
+    a:visited,
+    a:hover {
+        color: $link-dark;
+    }
+
+    code {
+        background-color: $secondary-dark;
+    }
+
+    pre, pre code {
+        background-color: $secondary-dark;
+    }
+
+    blockquote {
+        border-left: medium solid $secondary-dark;
+    }
+
+    details {
+        background-color: $secondary-dark;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        @include light-theme;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        @include dark-theme;
+    }
+}
+
+body:not(.dark-mode) {
+    @include light-theme;
+
+    #dark-mode-on {
+        display: inline;
+    }
+
+    #dark-mode-off {
+        display: none;
+    }
+}
+
+body.dark-mode {
+    @include dark-theme;
+
+    #dark-mode-on {
+        display: none;
+    }
+
+    #dark-mode-off {
+        display: inline;
+    }
+}
